@@ -7,12 +7,10 @@ describe('template spec', () => {
       .should('be.visible')
       .click()
     //admin
-    cy.get('#email').type('filllovezaza@gmil.com')
+    cy.get('#email').type('filllovezaza@go.buu.ac.th')
     cy.get('#password').type('Fill#577242')
     cy.contains('button', 'เข้าสู่ระบบ').click()
     
-    cy.contains('a','ผู้ประกอบการ').click()
-
     cy.contains('a','ประกาศงาน').click()
     
     cy.get('tbody tr').its('length').should('be.gte', 1)

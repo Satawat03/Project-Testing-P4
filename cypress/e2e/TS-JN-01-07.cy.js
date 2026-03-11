@@ -1,5 +1,12 @@
 describe('template spec', () => {
   it('passes', () => {
+     cy.intercept(
+      {
+        method: 'GET',
+        url: /\.(png|jpg|jpeg|gif|svg|webp)$/i,
+      },
+      { statusCode: 204 }
+    )
     cy.viewport(1280, 800) 
     cy.visit('http://prepro2.informatics.buu.ac.th:8091/')
 
@@ -7,11 +14,10 @@ describe('template spec', () => {
       .should('be.visible')
       .click()
     //admin
-    cy.get('#email').type('filllovezaza@gmil.com')
+    cy.get('#email').type('filllovezaza@go.buu.ac.th')
     cy.get('#password').type('Fill#577242')
     cy.contains('button', 'เข้าสู่ระบบ').click()
     
-    cy.contains('a','ผู้ประกอบการ').click()
     cy.contains('a','ประกาศงาน').click()
     
     cy.get('input[name="q"]').clear().type('ทดสอบการเพิ่มการประกาศงาน')
