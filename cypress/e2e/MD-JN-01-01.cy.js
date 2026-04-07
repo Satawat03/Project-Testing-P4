@@ -1,5 +1,6 @@
 describe('จัดการทักษะ(ผู้ดูแลระบบ)', () => {
   beforeEach(() => {
+    cy.intercept({method: 'GET',url: /\.(png|jpg|jpeg|gif|svg|webp)$/i,},{ statusCode: 204 })
     cy.viewport(1280, 800)
     cy.visit('http://prepro2.informatics.buu.ac.th:8091/')
 
@@ -133,7 +134,7 @@ describe('จัดการทักษะ(ผู้ดูแลระบบ)',
     cy.contains('a','คลังทักษะ ESCO').click()
     cy.get('a[href*="data.europa.eu/esco/skill"]').first().should('have.attr', 'href').and('include', 'data.europa.eu/esco/skill')
   })
-it('TC-JN-01-03-02', () => {
+  it('TC-JN-01-03-02', () => {
 
   cy.contains('a','คลังทักษะ ESCO').click()
 

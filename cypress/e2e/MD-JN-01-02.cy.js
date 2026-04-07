@@ -27,18 +27,18 @@ describe('การจัดการเรซูเม่(ผู้หางา
   })
 
   it('TC-JN-01-05-02', () => {
-    cy.contains('a', 'สร้างเรซูเม่').click()
+    cy.contains('a', 'สร้าง Resume').click()
     cy.contains('a', 'ยกเลิก').click()
   })
 
   it('TC-JN-01-05-03', () => {
-    cy.contains('a', 'สร้างเรซูเม่').click()
-    cy.contains('button', 'บันทึกเรซูเม่').click()
+    cy.contains('a', 'สร้าง Resume').click()
+    cy.contains('button', 'บันทึก Resume').click()
     cy.get('#validation-errors').should('be.visible')
   })
 
   it('TC-JN-01-05-04 --> TC-JN-01-05-08', () => {
-    cy.contains('a', 'สร้างเรซูเม่').click()
+    cy.contains('a', 'สร้าง Resume').click()
     cy.get('input[name="phone"]').type('กขคabc12345678900').should(($input) => {
     const value = $input.val()
     expect(value).to.match(/^[0-9]*$/)
@@ -57,7 +57,7 @@ describe('การจัดการเรซูเม่(ผู้หางา
   })
 
   it('TC-JN-01-05-09', () => {
-    cy.contains('a', 'สร้างเรซูเม่').click()
+    cy.contains('a', 'สร้าง Resume').click()
     //กรอกข้อมูลส่วนตัว
     cy.get('input[name="first_name"]').should('be.visible').type('ศตวรรษ')
     cy.get('input[name="middle_name"]').should('be.visible').type('ทิม')

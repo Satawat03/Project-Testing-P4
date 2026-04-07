@@ -10,7 +10,7 @@ describe('การจัดการใบเรซูเม่(ผู้ปร
     cy.get('#email').type('filllovezaza@go.buu.ac.th')
     cy.get('#password').type('Fill#577242')
     cy.contains('button', 'เข้าสู่ระบบ').click()
-    cy.contains('a','ใบเรซูเม่').click()
+    cy.contains('a','ใบ Resume ผู้สมัคร').click()
   })
 
   it('TC-JN-01-12-01', () => {})
@@ -35,7 +35,7 @@ describe('การจัดการใบเรซูเม่(ผู้ปร
   })
 
     it('TC-JN-01-14-01', () => {
-        cy.get('a[title="ดูรายละเอียดเรซูเม่"]').first().click()
+        cy.get('a[title="ดูรายละเอียด Resume"]').first().click()
     })
     it('TC-JN-01-14-02', () => {
         cy.get('button[title="บันทึกผู้สมัคร"]').first().click()
